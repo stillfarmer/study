@@ -1,0 +1,49 @@
+
+3.2.1 Machine-Level Code
+
+    (1) PC ( called %eip) indicates the address in memory of the next instruction to be executed.
+
+	(2) The integer register file contains eight named locations storing 32-bit values.
+	    These registers can hold addresses (corresponding to C pointers) or integer data.
+		Some registers are used to keep track of critical parts of the program state, 
+		while others are used to hold temporary data, such as the local variables of a procedure.
+
+	(3) Condition code registers hold status info about the most recently executed arithmetic
+	    instruction. These are used to implement conditional changes in the control flow, such
+		as is required to implement if or while statements.
+
+	(4) The floating-point register files contains eight locations for storing floating-point data.
+
+
+	Assembly code views the memory as simply a large, byte-addressable array.
+	Assembly code makes no distinction between signed or unsigned integers, between different 
+	         types of pointers, or even between pointers and integers.
+
+	
+	Program memory contains 
+	
+	    (1) the object code for the program
+		(2) some info required by the operating system.
+		(3) a run-time stack for managing procedure calls and returns
+		(4) blocks of memory allocated by the user(such as malloc).
+
+	Program memory is addressed using virtual addresses. At any given time, only limited subranges 
+	of virtual addresses are considered valid. The operating system manages this virtual address space,
+	translating virtual addresses into physical addresses of values in the actual processor memory.
+
+	
+	A single machine instruction performs only a very elementary operation. 
+	For example, it might 
+	    (1) add two numbers stored in register.
+		(2) transfer data between memory and a register.
+		(3) conditionally branch to a new instruction address.
+
+	The compiler must generate sequences of such instructions to implement program constructs 
+	such as arithmetic expression evaluation, loops, or procedure calls and returns.
+
+
+3.2.2 Code Examples
+
+
+	
+	    
