@@ -1,0 +1,45 @@
+1. Splitting the Kernel
+
+    1.1 Process management
+	1.2 Memory management
+	1.3 Filesystems
+	1.4 DeviceControl
+	1.5 Networking
+
+
+	1.1 Process management
+	    The kernel's process management activity implements the abstraction of several processes
+		on top of a single CPU or a few of them.
+
+	1.2 Memory management
+
+        The kernel builds up a virtual addressing space for any and all processes on top of the
+		limited available resources. 
+
+        The differnt parts of the kernel interact with the memory-management subsystem
+		through a set of function calls, ranging from the simple malloc/free pair to much
+		more complex functionalities.
+
+	1.3 Filesystems
+
+	    Almost everything in Unix can be treated as a file.
+
+		The kernel builds a structed filesystem on top of unstructed hardware, and the resulting file abstraction is
+		heavily used throughout the whole system.
+
+		Linux supports multiple filesystem types, that is, different ways of organizing data on the physical medium.
+		e.g. disks may be foratted with the Linux-standard ext3 filesystems, the commonly used FAT files or several others.
+
+	1.4 Device Control
+
+	    Almost every system operation eventually maps to a physical device.
+
+		With the exception of the processor, memory, and a very few other entities, any and all device control operations
+		are performed by code that is specific to the device being addressed. That code is called a device driver.
+
+    1.5 Networking 
+
+
+2. Loadable Modules
+
+    
